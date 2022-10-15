@@ -1,0 +1,168 @@
+:host {
+  background-color: #24232C;
+  width: 100%;
+
+  .slider-wrapper {
+    display: flex;
+    max-width: 33.75rem;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 1.5rem auto;
+    background-color: #24232C;
+    padding: 2.125rem;
+    box-sizing: border-box;
+
+    label {
+      flex: 1;
+      text-align: left;
+      font-size: 1.125rem;
+      color: #E6E5EA;
+    }
+    span {
+      flex: 1;
+      text-align: right;
+      font-size: 2rem;
+      color: #A4FFAF;
+    }
+    input[type=range] {
+      -webkit-appearance: none;
+      appearance: none;
+      margin-top: 1rem;
+      flex: 100%;
+
+      &::-webkit-slider-thumb {
+        appearance: none;
+        width: 1.75rem;
+        height: 1.75rem;
+        background-color: #e6e5ea;
+        cursor: pointer;
+        border-radius: 50%;
+        margin-top: -.7rem;
+
+        &:hover {
+          border: .125rem solid #A4FFAF;
+          background-color: #18171F;
+        }
+      }
+
+      &::-webkit-slider-runnable-track {
+        appearance: none;
+        background-color: #18171F;
+        height: .5rem;
+      }
+    }
+
+    .checkbox-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2rem;
+
+      label {
+        margin-top: 1.25rem;
+        color: #E6E5EA;
+        font-size: 1.125rem;
+        display: flex;
+        align-items: center;
+
+        input[type=checkbox] {
+          -webkit-appearance: none;
+          appearance: none;
+          border: .125rem solid #A4FFAF;
+          width: 1.25rem;
+          height: 1.25rem;
+          display: grid;
+          place-content: center;
+          margin-right: 1.7881rem;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &::before {
+            content: "";
+            width: 1rem;
+            height: .9rem;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+            transform: scale(0);
+            background-color: #18171F;
+          }
+
+          &:checked {
+            background-color: #A4FFAF;
+
+            &::before {
+              transform: scale(1);
+            }
+          }
+        }
+      }
+    }
+
+    .strength-container {
+      background-color: #18171F;
+      display: flex;
+      width: 100%;
+      padding: 1rem;
+      margin: 1.8rem 0;
+
+      .label {
+        flex: 1;
+        color: #817D92;
+        font-size: 1.125rem;
+        text-transform: uppercase;
+        text-align: left;
+      }
+      .strength-wrapper {
+        flex: 1;
+
+        .strength-squares {
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: flex-end;
+
+          .level {
+            margin: 0 .25rem;
+            border: 2px solid #E6E5EA;
+            width: .625rem;
+            height: 1.75rem;
+          }
+        }
+      }
+    }
+
+    button {
+      flex: 100%;
+      background-color: #A4FFAF;
+      padding: 1.3125rem;
+      color: #24232C;
+      text-transform: uppercase;
+      font-family: "Jet Brains Mono Regular";
+      font-size: 1.125rem;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        margin-left: 1.5rem;
+        width: 1.125rem;
+        height: 1.125rem;
+        background-image: url('../../assets/icons/fa-arrow.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        top: .125rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: transparent;
+        border: 0.125rem solid #A4FFAF;
+        color: #A4FFAF;
+
+        &::after {
+          color: #A4FFAF;
+          background-image: url('../../assets/icons/fa-hover-arrow.png');
+        }
+      }
+    }
+  }
+}

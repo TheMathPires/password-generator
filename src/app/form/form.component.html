@@ -1,0 +1,44 @@
+<div class="slider-wrapper">
+  <label for="slider-range">
+    Character Length
+  </label>
+  <span class="range-value">{{ rangeValue }}</span>
+  <input [value]="rangeValue" id="slider-range" type="range" min="1" max="20" />
+
+  <div class="checkbox-wrapper">
+    <label for="uppercase">
+      <input type="checkbox" id="uppercase" />
+      Include Uppercase Letters
+    </label>
+    <label for="lowercase">
+      <input type="checkbox" id="lowercase" />
+      Include Lowercase Letters
+    </label>
+    <label for="numbers">
+      <input type="checkbox" id="numbers" />
+      Include Numbers
+    </label>
+    <label for="symbols">
+      <input type="checkbox" id="symbols" />
+      Include Symbols
+    </label>
+  </div>
+
+  <div class="strength-container">
+    <div class="label">
+      STRENGTH
+    </div>
+    <div class="strength-wrapper">
+      <span class="strength-level">{{ strengthLevel }}</span>
+      <div class="strength-squares">
+        <div class="level"></div>
+        <div class="level"></div>
+        <div class="level"></div>
+        <div class="level"></div>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit">GENERATE</button>
+</div>
+

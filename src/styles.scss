@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Jet Brains Mono Regular';
+  src: url('./assets/fonts/JetbrainsMonoRegular.ttf');
+}
+
+body {
+  font-family: 'Jet Brains Mono Regular';
+  text-align: center;
+  background-color: #18171F;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #817D92;
+}
