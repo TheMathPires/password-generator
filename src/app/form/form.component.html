@@ -2,24 +2,24 @@
   <label for="slider-range">
     Character Length
   </label>
-  <span class="range-value">{{ rangeValue }}</span>
-  <input [value]="rangeValue" id="slider-range" type="range" min="1" max="20" />
+  <span class="range-value">{{ inputValue }}</span>
+  <input (input)="getValue($event)" [value]="inputValue" id="slider-range" type="range" min="0" max="20" />
 
   <div class="checkbox-wrapper">
     <label for="uppercase">
-      <input type="checkbox" id="uppercase" />
+      <input (click)="checkPasswordRule('uppercase')" type="checkbox" id="uppercase" />
       Include Uppercase Letters
     </label>
     <label for="lowercase">
-      <input type="checkbox" id="lowercase" />
+      <input (click)="checkPasswordRule('lowercase')"  type="checkbox" id="lowercase" />
       Include Lowercase Letters
     </label>
     <label for="numbers">
-      <input type="checkbox" id="numbers" />
+      <input (click)="checkPasswordRule('numbers')"  type="checkbox" id="numbers" />
       Include Numbers
     </label>
     <label for="symbols">
-      <input type="checkbox" id="symbols" />
+      <input (click)="checkPasswordRule('symbols')" type="checkbox" id="symbols" />
       Include Symbols
     </label>
   </div>
@@ -31,14 +31,11 @@
     <div class="strength-wrapper">
       <span class="strength-level">{{ strengthLevel }}</span>
       <div class="strength-squares">
-        <div class="level"></div>
-        <div class="level"></div>
-        <div class="level"></div>
-        <div class="level"></div>
+        <div class="level" *ngFor="let level of [0, 1, 2, 3]"></div>
       </div>
     </div>
   </div>
 
-  <button type="submit">GENERATE</button>
+  <button type="button" (click)="generatePassword()">GENERATE</button>
 </div>
 
