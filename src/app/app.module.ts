@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
-import { PasswordValue } from './input/password-value.component';
+import { PasswordValue } from './password-value/password-value.component';
 
 @NgModule({
   declarations: [

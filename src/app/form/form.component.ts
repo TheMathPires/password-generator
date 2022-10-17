@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 import { PasswordRules } from "../shared/password-rules.interface";
 
 @Component({
@@ -8,14 +8,15 @@ import { PasswordRules } from "../shared/password-rules.interface";
 })
 export class FormComponent {
 
-  public onRangeValueChange!: EventEmitter<string>;
+  @Output()
+  public onPasswordGenerate!: EventEmitter<string>;
   public rangeValue!: string;
   public strengthLevel!: string;
   public inputValue!: string;
   public passwordRules!: PasswordRules;
 
   constructor() {
-    this.onRangeValueChange = new EventEmitter<string>();
+    this.onPasswordGenerate = new EventEmitter<string>();
     this.strengthLevel = '';
     this.inputValue = '0';
     this.passwordRules = { uppercase: false, lowercase: false, symbols: false, numbers: false };
@@ -51,6 +52,8 @@ export class FormComponent {
     for (let i = 0; i <= parseInt(this.inputValue); i++) {
       password += possible.charAt(Math.floor(Math.random() * possible.length));
     }
+
+    this.onPasswordGenerate.emit(password);
 
     return password;
   }

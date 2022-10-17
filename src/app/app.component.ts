@@ -6,16 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   public title!: string;
-  public copiedValue!: string;
+  public generatedPassword!: string;
 
   constructor() {
     this.title = 'Password Generator';
-    this.copiedValue = '';
+    this.generatedPassword = '';
   }
 
-  public getValue(event: string) {
-    this.copiedValue = event;
-    console.log(this.copiedValue);
+  setPassword(password: string) {
+    this.generatedPassword = password;
+    console.log("generated password", this.generatedPassword);
   }
 }
