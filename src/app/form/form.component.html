@@ -2,8 +2,8 @@
   <label for="slider-range">
     Character Length
   </label>
-  <span class="range-value">{{ inputValue }}</span>
-  <input (input)="getValue($event)" [value]="inputValue" id="slider-range" type="range" min="0" max="20" />
+  <span class="range-value">{{ characterLength }}</span>
+  <input (input)="getValue($event)" [value]="characterLength" id="slider-range" type="range" min="4" max="20" />
 
   <div class="checkbox-wrapper">
     <label for="uppercase">
@@ -30,7 +30,7 @@
     </div>
     <div class="strength-wrapper">
       <span class="strength-level">{{ strengthLevel }}</span>
-      <div class="strength-squares">
+      <div #levelElement class="strength-squares">
         <div class="level" *ngFor="let level of [0, 1, 2, 3]"></div>
       </div>
     </div>
