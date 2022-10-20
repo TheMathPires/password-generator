@@ -2,12 +2,19 @@
   background-color: #24232C;
   width: 100%;
 
+  .password-error {
+    color: #c71212;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
   .slider-wrapper {
     display: flex;
     max-width: 33.75rem;
     flex-wrap: wrap;
     width: 100%;
-    margin: 1.5rem auto;
+    margin: 1rem auto;
     background-color: #24232C;
     padding: 2.125rem;
     box-sizing: border-box;

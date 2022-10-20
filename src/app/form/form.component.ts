@@ -18,6 +18,7 @@ export class FormComponent {
   public characterLength!: string;
   public passwordRules!: PasswordRules;
   public points!: number;
+  public passwordError!: boolean;
 
   constructor() {
     this.onPasswordGenerate = new EventEmitter<string>();
@@ -25,12 +26,27 @@ export class FormComponent {
     this.characterLength = '4';
     this.passwordRules = { uppercase: false, lowercase: false, symbols: false, numbers: false };
     this.points = 0;
+    this.passwordError = false;
   }
 
   ngOnInit(): void {
     this.onPasswordGenerate.subscribe((password) => {
       this.calculateStrengthLevel(password);
+      this.checkPasswordStatus();
     });
+  }
+
+  private checkPasswordStatus(): void {
+    if (
+      !this.passwordRules.lowercase &&
+      !this.passwordRules.uppercase &&
+      !this.passwordRules.numbers &&
+      !this.passwordRules.symbols
+    ) {
+      this.passwordError = true;
+    } else {
+      this.passwordError = false;
+    }
   }
 
   public getValue(event: Event): void {
