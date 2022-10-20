@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
   selector: 'app-input',
@@ -12,6 +12,10 @@ export class PasswordValue {
 
   constructor() {
     this.value = '';
+  }
+
+  public copyText(): void {
+    navigator.clipboard.writeText(this.value);
   }
 
 }
