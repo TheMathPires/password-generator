@@ -6,6 +6,7 @@ import { FormComponent } from './form/form.component';
 import { PasswordValue } from './password-value/password-value.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,6 @@ import { faCopy } from '@fortawesome/free-regular-svg-icons';
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faCopy);
+    library.addIcons(faCopy, faArrowRight);
   }
 }
