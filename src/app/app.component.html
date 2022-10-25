@@ -1,3 +1,5 @@
 <h1>{{ title }}</h1>
-<app-input [value]="generatedPassword"></app-input>
-<app-form (onPasswordGenerate)="setPassword($event)"></app-form>
+<main>
+  <app-input [value]="generatedPassword"></app-input>
+  <app-form (onPasswordGenerate)="setPassword($event)"></app-form>
+</main>
