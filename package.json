@@ -4,8 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href 'https://themathpires.github.io/password-generator/'",
     "watch": "ng build --watch --configuration development",
+    "upload": "npx angular-cli-ghpages --dir=dist/password-generator",
     "test": "ng test"
   },
   "private": true,
